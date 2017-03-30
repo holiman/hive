@@ -178,7 +178,7 @@ class HiveAPI(object):
                 )
 
 
-        pool = ThreadPool(7) 
+        pool = ThreadPool(3) 
         #Turns out a raw iterator isn't supported, so comprehending a list instead :(
         pool.map(perform_work, [x for x in iterator()])
         pool.close()
