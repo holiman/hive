@@ -119,10 +119,23 @@ class Testcase(object):
             return self.data[key]
         return None
 
+    def toHash(self,key):
+        if len(key) < 2:
+            return "0x0000000000000000000000000000000000000000000000000000000000000000"
+
+        if key[:2]== '0x':
+            newkey = '0x'+key[2:].zfill(64)
+        else:
+            newkey = '0x'+key.zfill(64) 
+        return newkey
+
     def genesis(self, key = None):
         """ Returns the 'genesis' block for this testcase,
         including any alloc's (prestate) required """
         # Genesis block
+
+        convert_to_hex = ['nonce','receiptTrie','hash','uncleHash','mixHash','parentHash','stateRoot','coinbase','transactionsTrie']
+
         if self.raw_genesis is None:
             raw_genesis = self.data['genesisBlockHeader']
 
@@ -131,22 +144,24 @@ class Testcase(object):
             # But if it's written as 0102030405060708 in the genesis file,
             # it's interpreted differently. So we'll need to mod that on the fly
             # for every testcase.
-            if 'nonce' in raw_genesis:
-                nonce = raw_genesis[u'nonce']
-                if not raw_genesis[u'nonce'][:2] == '0x':
-                    raw_genesis[u'nonce'] = '0x'+raw_genesis[u'nonce']
+            for key in convert_to_hex:
+                if key in raw_genesis:
+                    val = raw_genesis[key]
+                    if not raw_genesis[key][:2] == '0x':
+                        raw_genesis[key] = '0x'+raw_genesis[key]
 
-            # Also, testcases have 'code' written as 0xdead
-            # But geth does not handle that, so we'll need to mod any of those also
-            # However, cpp-ethereum rejects 'code' written as 'dead'
-#            for addr, account in self.data['pre'].items():
-#                if 'code' in account:
-#                    code = account['code']
-#                    if code[:2] == '0x':
-#                        account['code'] = code[2:]
+#            raw_genesis['alloc'] = {}
 
+            for account_key, account in self.data['pre'].items():
+                if 'storage' in account.keys():
+                    newstorage = {}
+                    for k,v in account['storage'].items():
+                        newstorage[self.toHash(k)] = self.toHash(v)
+
+                    account['storage'] = newstorage
 
             raw_genesis['alloc'] = self.data['pre']
+
             self.raw_genesis = raw_genesis
 
         if key is None:
