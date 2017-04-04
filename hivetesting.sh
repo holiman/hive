@@ -31,26 +31,21 @@ function testclient {
   
   mkdir -p ./tmp/$NOW-$client
   ls -la ./tmp/
-
+  echo "Running as $(whoami)"
   echo "Starting hive, check progress at $LOG_OUT"
   
   clean_pre
 
 #  ./hive --docker-noshell -sim ethereum/consensus -test none -client $client 2> $LOGDIR/output.log | \
-  echo "Sleeping for 300 seconds"
-  sleep 300
-  echo "Testing https://index.docker.io/v1/repositories/library/alpine/images"
-  curl https://index.docker.io/v1/repositories/library/alpine/images
-  echo "Testing http://www.swende.se/xss.html"
-  curl http://www.swende.se/xss.html
 
-  hive --docker-noshell -sim ethereum/consensus -test none -client $client 2> $LOG_OUT | \
-    grep -v -e "^[\.]+$"        | \
-    grep -v -e "^[a-f0-9]{12}$" | \
-    grep -v "^Deleted: sha256:" > $JSN_OUT
-    
+  hive --docker-noshell -sim ethereum/consensus -test none -client $client 
+#  hive --docker-noshell -sim ethereum/consensus -test none -client $client 2> $LOG_OUT | \
+#    grep -v -e "^[\.]+$"        | \
+#    grep -v -e "^[a-f0-9]{12}$" | \
+#    grep -v "^Deleted: sha256:" > $JSN_OUT
+#    
   clean_post
-
+  exit 1
   mkdir -p $WWWROOT/artefacts/$NOW-$client
   echo "Hive done, copying logs..."       && \
 

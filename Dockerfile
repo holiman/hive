@@ -32,5 +32,5 @@ RUN go install
 
 # Inject all other runtime resources (modified most frequently)
 COPY . $GOPATH/src/github.com/karalabe/hive
-RUN chmod +x hivetesting.sh && chmod +x blocktests.sh
+RUN chmod +x hivetesting.sh && chmod +x hivetesting.sh
 ENTRYPOINT ["./hivetesting.sh"]
