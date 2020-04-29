@@ -1,0 +1,233 @@
+Using the following genesis
+{
+  "coinbase": "0x8888f1f195afa192cfee860698584c030f4c9db1",
+  "difficulty": "0x020000",
+  "extraData": "0x42",
+  "gasLimit": "0x2fefd8",
+  "mixHash": "0x2c85bcbce56429100b2108254bb56906257582aeafcbd682bc9af67a9f5aee46",
+  "nonce": "0x78cc16f7b4f65485",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "timestamp": "0x54c98c81",
+  "alloc": {
+    "a94f5374fce5edbc8e2a8697c15331677e6ebf0b": {
+      "balance": "0x09184e72a000"
+    }
+  },
+  "config": {
+    "ethash": {}
+  }
+}
+starting main client: /opt/besu/bin/besu  --bootnodes=enode://158f8aab45f6d19c6cbf4a089c2670541a8da11978a2f90dbf6a502a4a3bab80d288afdbeb7ec0ef6d92de563767f3b1ea9e8e334ca711e9f8e2df5a0385e8e6@1.2.3.4:30303 --network-id=1337 --logging=TRACE --genesis-file=/besugenesis.json --graphql-http-enabled --graphql-http-host=0.0.0.0 --host-whitelist=* --rpc-http-enabled --rpc-http-api=ETH,NET,WEB3,ADMIN --rpc-http-host=0.0.0.0
+Setting logging level to TRACE
+2020-04-29 20:03:26.015+00:00 | main | INFO  | Besu | Starting Besu version: besu/v1.4.4-dev-5867a4b2/linux-x86_64/oracle_openjdk-java-11
+2020-04-29 20:03:26.059+00:00 | main | DEBUG | ResourceLeakDetector | -Dio.netty.leakDetection.level: simple
+2020-04-29 20:03:26.059+00:00 | main | DEBUG | ResourceLeakDetector | -Dio.netty.leakDetection.targetRecords: 4
+2020-04-29 20:03:26.069+00:00 | main | DEBUG | InternalThreadLocalMap | -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2020-04-29 20:03:26.069+00:00 | main | DEBUG | InternalThreadLocalMap | -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2020-04-29 20:03:26.075+00:00 | main | DEBUG | MultithreadEventLoopGroup | -Dio.netty.eventLoopThreads: 16
+2020-04-29 20:03:26.092+00:00 | main | DEBUG | NioEventLoop | -Dio.netty.noKeySetOptimization: false
+2020-04-29 20:03:26.092+00:00 | main | DEBUG | NioEventLoop | -Dio.netty.selectorAutoRebuildThreshold: 512
+2020-04-29 20:03:26.105+00:00 | main | DEBUG | PlatformDependent0 | -Dio.netty.noUnsafe: false
+2020-04-29 20:03:26.105+00:00 | main | DEBUG | PlatformDependent0 | Java version: 11
+2020-04-29 20:03:26.106+00:00 | main | DEBUG | PlatformDependent0 | sun.misc.Unsafe.theUnsafe: available
+2020-04-29 20:03:26.107+00:00 | main | DEBUG | PlatformDependent0 | sun.misc.Unsafe.copyMemory: available
+2020-04-29 20:03:26.108+00:00 | main | DEBUG | PlatformDependent0 | java.nio.Buffer.address: available
+2020-04-29 20:03:26.108+00:00 | main | DEBUG | PlatformDependent0 | direct buffer constructor: unavailable
+java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31) ~[netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.PlatformDependent0$4.run(PlatformDependent0.java:224) ~[netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:?]
+	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:218) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:272) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:92) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:285) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:156) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:138) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:47) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:59) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:78) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:73) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:60) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.vertx.core.net.impl.transport.Transport.eventLoopGroup(Transport.java:153) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.impl.VertxImpl.<init>(VertxImpl.java:143) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.impl.VertxImpl.vertx(VertxImpl.java:92) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:40) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:32) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.Vertx.vertx(Vertx.java:85) [vertx-core-3.8.5.jar:3.8.5]
+	at org.hyperledger.besu.cli.BesuCommand.createVertx(BesuCommand.java:1772) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at org.hyperledger.besu.cli.BesuCommand.run(BesuCommand.java:931) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at picocli.CommandLine.executeUserObject(CommandLine.java:1769) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine.access$900(CommandLine.java:145) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2141) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2108) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1968) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:2322) [picocli-4.1.4.jar:4.1.4]
+	at org.hyperledger.besu.cli.util.ConfigOptionSearchAndRunHandler.handle(ConfigOptionSearchAndRunHandler.java:61) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at org.hyperledger.besu.cli.util.ConfigOptionSearchAndRunHandler.handle(ConfigOptionSearchAndRunHandler.java:31) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1968) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:2322) [picocli-4.1.4.jar:4.1.4]
+	at org.hyperledger.besu.cli.BesuCommand.parse(BesuCommand.java:1053) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at org.hyperledger.besu.cli.BesuCommand.parse(BesuCommand.java:922) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at org.hyperledger.besu.Besu.main(Besu.java:49) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+2020-04-29 20:03:26.119+00:00 | main | DEBUG | PlatformDependent0 | java.nio.Bits.unaligned: available, true
+2020-04-29 20:03:26.120+00:00 | main | DEBUG | PlatformDependent0 | jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$6 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @d71adc2
+	at jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361) ~[?:?]
+	at java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:558) ~[?:?]
+	at io.netty.util.internal.PlatformDependent0$6.run(PlatformDependent0.java:334) ~[netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:?]
+	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:325) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:272) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:92) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:285) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:156) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:138) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:47) [netty-common-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:59) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:78) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:73) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:60) [netty-transport-4.1.42.Final.jar:4.1.42.Final]
+	at io.vertx.core.net.impl.transport.Transport.eventLoopGroup(Transport.java:153) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.impl.VertxImpl.<init>(VertxImpl.java:143) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.impl.VertxImpl.vertx(VertxImpl.java:92) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:40) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:32) [vertx-core-3.8.5.jar:3.8.5]
+	at io.vertx.core.Vertx.vertx(Vertx.java:85) [vertx-core-3.8.5.jar:3.8.5]
+	at org.hyperledger.besu.cli.BesuCommand.createVertx(BesuCommand.java:1772) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at org.hyperledger.besu.cli.BesuCommand.run(BesuCommand.java:931) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at picocli.CommandLine.executeUserObject(CommandLine.java:1769) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine.access$900(CommandLine.java:145) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2141) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2108) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1968) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:2322) [picocli-4.1.4.jar:4.1.4]
+	at org.hyperledger.besu.cli.util.ConfigOptionSearchAndRunHandler.handle(ConfigOptionSearchAndRunHandler.java:61) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at org.hyperledger.besu.cli.util.ConfigOptionSearchAndRunHandler.handle(ConfigOptionSearchAndRunHandler.java:31) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1968) [picocli-4.1.4.jar:4.1.4]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:2322) [picocli-4.1.4.jar:4.1.4]
+	at org.hyperledger.besu.cli.BesuCommand.parse(BesuCommand.java:1053) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at org.hyperledger.besu.cli.BesuCommand.parse(BesuCommand.java:922) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+	at org.hyperledger.besu.Besu.main(Besu.java:49) [besu-1.4.4-SNAPSHOT.jar:1.4.4-dev-5867a4b2]
+2020-04-29 20:03:26.121+00:00 | main | DEBUG | PlatformDependent0 | java.nio.DirectByteBuffer.<init>(long, int): unavailable
+2020-04-29 20:03:26.121+00:00 | main | DEBUG | PlatformDependent | sun.misc.Unsafe: available
+2020-04-29 20:03:26.122+00:00 | main | DEBUG | PlatformDependent | maxDirectMemory: 4129292288 bytes (maybe)
+2020-04-29 20:03:26.122+00:00 | main | DEBUG | PlatformDependent | -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2020-04-29 20:03:26.122+00:00 | main | DEBUG | PlatformDependent | -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2020-04-29 20:03:26.123+00:00 | main | DEBUG | PlatformDependent | -Dio.netty.maxDirectMemory: -1 bytes
+2020-04-29 20:03:26.123+00:00 | main | DEBUG | PlatformDependent | -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2020-04-29 20:03:26.124+00:00 | main | DEBUG | CleanerJava9 | java.nio.ByteBuffer.cleaner(): available
+2020-04-29 20:03:26.124+00:00 | main | DEBUG | PlatformDependent | -Dio.netty.noPreferDirect: false
+2020-04-29 20:03:26.130+00:00 | main | DEBUG | PlatformDependent | org.jctools-core.MpscChunkedArrayQueue: available
+2020-04-29 20:03:26.133+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@71b1a49c
+2020-04-29 20:03:26.134+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@22175d4f
+2020-04-29 20:03:26.134+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@9fecdf1
+2020-04-29 20:03:26.134+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3b809711
+2020-04-29 20:03:26.134+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3b0f7d9d
+2020-04-29 20:03:26.135+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@236ab296
+2020-04-29 20:03:26.135+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@5c84624f
+2020-04-29 20:03:26.135+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@63034ed1
+2020-04-29 20:03:26.135+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@232024b9
+2020-04-29 20:03:26.135+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@55a8dc49
+2020-04-29 20:03:26.135+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@2a415aa9
+2020-04-29 20:03:26.136+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@53cdecf6
+2020-04-29 20:03:26.136+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@71ea1fda
+2020-04-29 20:03:26.136+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@62b3df3a
+2020-04-29 20:03:26.136+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@420745d7
+2020-04-29 20:03:26.136+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@7e11ab3d
+2020-04-29 20:03:26.137+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@76f10035
+2020-04-29 20:03:26.165+00:00 | main | DEBUG | DefaultDnsServerAddressStreamProvider | Default DNS servers: [/8.8.8.8:53, /8.8.4.4:53] (sun.net.dns.ResolverConfiguration)
+2020-04-29 20:03:26.170+00:00 | main | DEBUG | NetUtil | -Djava.net.preferIPv4Stack: false
+2020-04-29 20:03:26.170+00:00 | main | DEBUG | NetUtil | -Djava.net.preferIPv6Addresses: false
+2020-04-29 20:03:26.171+00:00 | main | DEBUG | NetUtil | Loopback interface: lo (lo, 127.0.0.1)
+2020-04-29 20:03:26.171+00:00 | main | DEBUG | NetUtil | /proc/sys/net/core/somaxconn: 128
+2020-04-29 20:03:26.218+00:00 | main | INFO  | StaticNodesParser | StaticNodes file /opt/besu/static-nodes.json does not exist, no static connections will be created.
+2020-04-29 20:03:26.218+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
+2020-04-29 20:03:26.218+00:00 | main | TRACE | Besu | Static Nodes = []
+2020-04-29 20:03:26.940+00:00 | main | INFO  | KeyPairUtil | Generated new key 0x607c6c65d7f7046aeb3d9db359eecbd78c6d9502d097e85cfe43a7ea25fbb27b448fff5fb5a4e6df38e18a1cb798195c2a54b67840bf69366050724585159f17 and stored it to /opt/besu/key
+2020-04-29 20:03:26.967+00:00 | main | INFO  | RocksDBKeyValueStorageFactory | No existing database detected at /opt/besu. Using version 1
+2020-04-29 20:03:27.267+00:00 | main | INFO  | ProtocolScheduleBuilder | Protocol schedule created with milestones: [Frontier: 0]
+2020-04-29 20:03:27.387+00:00 | main | DEBUG | BesuPluginContextImpl | Plugin startup complete.
+2020-04-29 20:03:27.393+00:00 | main | INFO  | RunnerBuilder | Detecting NAT service.
+2020-04-29 20:03:27.459+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@7dffda8b
+2020-04-29 20:03:27.473+00:00 | main | TRACE | NioEventLoop | instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@6abdec0e
+2020-04-29 20:03:27.853+00:00 | main | INFO  | Runner | Starting Ethereum main loop ... 
+2020-04-29 20:03:27.853+00:00 | main | INFO  | DockerNatManager | Starting docker NAT manager.
+2020-04-29 20:03:27.853+00:00 | main | INFO  | NetworkRunner | Starting Network.
+2020-04-29 20:03:27.877+00:00 | main | DEBUG | DefaultChannelId | -Dio.netty.processId: 14 (auto-detected)
+2020-04-29 20:03:27.879+00:00 | main | DEBUG | DefaultChannelId | -Dio.netty.machineId: 02:42:ac:ff:fe:11:00:04 (auto-detected)
+2020-04-29 20:03:27.920+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.numHeapArenas: 16
+2020-04-29 20:03:27.920+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.numDirectArenas: 16
+2020-04-29 20:03:27.920+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.pageSize: 8192
+2020-04-29 20:03:27.920+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.maxOrder: 11
+2020-04-29 20:03:27.920+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.chunkSize: 16777216
+2020-04-29 20:03:27.921+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.tinyCacheSize: 512
+2020-04-29 20:03:27.921+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.smallCacheSize: 256
+2020-04-29 20:03:27.921+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.normalCacheSize: 64
+2020-04-29 20:03:27.921+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2020-04-29 20:03:27.922+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.cacheTrimInterval: 8192
+2020-04-29 20:03:27.922+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+2020-04-29 20:03:27.922+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.useCacheForAllThreads: true
+2020-04-29 20:03:27.922+00:00 | main | DEBUG | PooledByteBufAllocator | -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+2020-04-29 20:03:27.938+00:00 | main | DEBUG | ByteBufUtil | -Dio.netty.allocator.type: pooled
+2020-04-29 20:03:27.939+00:00 | main | DEBUG | ByteBufUtil | -Dio.netty.threadLocalDirectBufferSize: 0
+2020-04-29 20:03:27.939+00:00 | main | DEBUG | ByteBufUtil | -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2020-04-29 20:03:27.953+00:00 | nioEventLoopGroup-2-1 | INFO  | RlpxAgent | P2P RLPx agent started and listening on /0.0.0.0:30303.
+2020-04-29 20:03:27.954+00:00 | main | INFO  | PeerDiscoveryAgent | Starting peer discovery agent on host=0.0.0.0, port=30303
+2020-04-29 20:03:27.954+00:00 | main | DEBUG | NatService | Waiting for up to 60 seconds to detect external IP address...
+2020-04-29 20:03:28.004+00:00 | vert.x-eventloop-thread-1 | INFO  | VertxPeerDiscoveryAgent | Started peer discovery agent successfully, on effective host=0.0.0.0 and port=30303
+2020-04-29 20:03:28.005+00:00 | vert.x-eventloop-thread-1 | INFO  | PeerDiscoveryAgent | P2P peer discovery agent started and listening on /0.0.0.0:30303
+2020-04-29 20:03:28.043+00:00 | vert.x-eventloop-thread-1 | DEBUG | RecursivePeerRefreshState | Start peer search.
+2020-04-29 20:03:28.045+00:00 | vert.x-eventloop-thread-1 | DEBUG | RecursivePeerRefreshState | Initiating bonding round with 1 candidates
+2020-04-29 20:03:28.056+00:00 | main | DEBUG | NatService | Waiting for up to 60 seconds to detect external IP address...
+2020-04-29 20:03:28.057+00:00 | main | INFO  | DefaultP2PNetwork | Enode URL enode://607c6c65d7f7046aeb3d9db359eecbd78c6d9502d097e85cfe43a7ea25fbb27b448fff5fb5a4e6df38e18a1cb798195c2a54b67840bf69366050724585159f17@127.0.0.1:30303
+2020-04-29 20:03:28.065+00:00 | main | INFO  | DefaultSynchronizer | Starting synchronizer.
+2020-04-29 20:03:28.067+00:00 | main | INFO  | FullSyncDownloader | Starting full sync.
+2020-04-29 20:03:28.070+00:00 | main | INFO  | FullSyncTargetManager | No sync target, waiting for peers: 0
+2020-04-29 20:03:28.073+00:00 | main | DEBUG | WaitForPeerTask | Waiting for new peer connection. 0 peers currently connected.
+2020-04-29 20:03:28.083+00:00 | main | INFO  | JsonRpcHttpService | Starting JsonRPC service on 0.0.0.0:8545
+2020-04-29 20:03:28.138+00:00 | vert.x-eventloop-thread-1 | TRACE | DiscoveryProtocolLogger | <<< Sending  PING  packet to peer 0x158f8aab45f6d19c6cbf4a089c267054 (enode://158f8aab45f6d19c6cbf4a089c2670541a8da11978a2f90dbf6a502a4a3bab80d288afdbeb7ec0ef6d92de563767f3b1ea9e8e334ca711e9f8e2df5a0385e8e6@1.2.3.4:30303): Packet{type=PING, data=PingPacketData{from=Endpoint{host='127.0.0.1', udpPort=30303, getTcpPort=30303}, to=Endpoint{host='1.2.3.4', udpPort=30303, getTcpPort=30303}, expiration=1588190668049}, hash=0xbaa1dcc4228b12e255a57b743485e70aff142db5307245a335a3b01e56ae2e7e, signature=SECP256K1.Signature{r=98015249371377493906548175141036433839284370851182528625569051765844706539702, s=32180530774131839502274258335049537120955263244858370512845183276387543038475, recId=0}, publicKey=0x607c6c65d7f7046aeb3d9db359eecbd78c6d9502d097e85cfe43a7ea25fbb27b448fff5fb5a4e6df38e18a1cb798195c2a54b67840bf69366050724585159f17}
+2020-04-29 20:03:28.139+00:00 | main | INFO  | GraphQLHttpService | Starting GraphQL HTTP service on 0.0.0.0:8547
+2020-04-29 20:03:28.139+00:00 | vert.x-eventloop-thread-5 | INFO  | JsonRpcHttpService | JsonRPC service started and listening on 0.0.0.0:8545
+2020-04-29 20:03:28.150+00:00 | vert.x-eventloop-thread-7 | INFO  | GraphQLHttpService | GraphQL HTTP service started and listening on 0.0.0.0:8547
+2020-04-29 20:03:28.151+00:00 | main | INFO  | Runner | Ethereum main loop is up.
+2020-04-29 20:03:28.157+00:00 | main | DEBUG | NatService | Waiting for up to 60 seconds to detect external IP address...
+2020-04-29 20:03:28.157+00:00 | main | DEBUG | NatService | Waiting for up to 60 seconds to detect local IP address...
+2020-04-29 20:03:28.159+00:00 | vert.x-eventloop-thread-1 | DEBUG | AbstractByteBuf | -Dio.netty.buffer.checkAccessible: true
+2020-04-29 20:03:28.160+00:00 | vert.x-eventloop-thread-1 | DEBUG | AbstractByteBuf | -Dio.netty.buffer.checkBounds: true
+2020-04-29 20:03:28.159+00:00 | main | INFO  | AutoTransactionLogBloomCachingService | Starting auto transaction log bloom caching service.
+2020-04-29 20:03:28.161+00:00 | vert.x-eventloop-thread-1 | DEBUG | ResourceLeakDetectorFactory | Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@6d88d533
+2020-04-29 20:03:28.176+00:00 | vert.x-eventloop-thread-1 | DEBUG | Recycler | -Dio.netty.recycler.maxCapacityPerThread: 4096
+2020-04-29 20:03:28.176+00:00 | vert.x-eventloop-thread-1 | DEBUG | Recycler | -Dio.netty.recycler.maxSharedCapacityFactor: 2
+2020-04-29 20:03:28.176+00:00 | vert.x-eventloop-thread-1 | DEBUG | Recycler | -Dio.netty.recycler.linkCapacity: 16
+2020-04-29 20:03:28.176+00:00 | vert.x-eventloop-thread-1 | DEBUG | Recycler | -Dio.netty.recycler.ratio: 8
+2020-04-29 20:03:29.149+00:00 | vert.x-eventloop-thread-5 | DEBUG | ZlibCodecFactory | -Dio.netty.noJdkZlibDecoder: false
+2020-04-29 20:03:29.149+00:00 | vert.x-eventloop-thread-5 | DEBUG | ZlibCodecFactory | -Dio.netty.noJdkZlibEncoder: false
+2020-04-29 20:03:29.157+00:00 | vert.x-eventloop-thread-5 | TRACE | RouterImpl | Router: 1266018528 accepting request POST http://localhost:8545/
+2020-04-29 20:03:29.161+00:00 | vert.x-eventloop-thread-5 | TRACE | RoutingContextImplBase | Route matches: RouteState{path='null', order=1, enabled=true, methods=null, consumes=null, emptyBodyPermittedWithConsumes=false, produces=null, contextHandlers=[org.hyperledger.besu.ethereum.api.jsonrpc.JsonRpcHttpService$$Lambda$799/0x0000000840525440@bf923df], failureHandlers=null, added=true, pattern=null, groups=null, useNormalisedPath=true, namedGroupsInRegex=null, virtualHostPattern=null, pathEndsWithSlash=false, exclusive=false, exactPath=false}
+2020-04-29 20:03:29.161+00:00 | vert.x-eventloop-thread-5 | TRACE | RoutingContextImplBase | Calling the  handler
+2020-04-29 20:03:29.162+00:00 | vert.x-eventloop-thread-5 | TRACE | RoutingContextImplBase | Route matches: RouteState{path='null', order=2, enabled=true, methods=null, consumes=null, emptyBodyPermittedWithConsumes=false, produces=null, contextHandlers=[io.vertx.ext.web.handler.impl.CorsHandlerImpl@2a93f0bc], failureHandlers=null, added=true, pattern=null, groups=null, useNormalisedPath=true, namedGroupsInRegex=null, virtualHostPattern=null, pathEndsWithSlash=false, exclusive=false, exactPath=false}
+2020-04-29 20:03:29.162+00:00 | vert.x-eventloop-thread-5 | TRACE | RoutingContextImplBase | Calling the  handler
+2020-04-29 20:03:29.163+00:00 | vert.x-eventloop-thread-5 | TRACE | RoutingContextImplBase | Route matches: RouteState{path='null', order=3, enabled=true, methods=null, consumes=null, emptyBodyPermittedWithConsumes=false, produces=null, contextHandlers=[io.vertx.ext.web.handler.impl.BodyHandlerImpl@2373a6c2], failureHandlers=null, added=true, pattern=null, groups=null, useNormalisedPath=true, namedGroupsInRegex=null, virtualHostPattern=null, pathEndsWithSlash=false, exclusive=false, exactPath=false}
+2020-04-29 20:03:29.163+00:00 | vert.x-eventloop-thread-5 | TRACE | RoutingContextImplBase | Calling the  handler
+2020-04-29 20:03:29.171+00:00 | vert.x-eventloop-thread-5 | TRACE | RoutingContextImplBase | Route matches: RouteState{path='/', order=7, enabled=true, methods=[POST], consumes=null, emptyBodyPermittedWithConsumes=false, produces=[io.vertx.ext.web.impl.ParsableMIMEValue@fd630a66], contextHandlers=[org.hyperledger.besu.ethereum.api.jsonrpc.JsonRpcHttpService$$Lambda$812/0x0000000840538440@4fee46d3], failureHandlers=null, added=true, pattern=null, groups=null, useNormalisedPath=true, namedGroupsInRegex=null, virtualHostPattern=null, pathEndsWithSlash=true, exclusive=false, exactPath=true}
+2020-04-29 20:03:29.172+00:00 | vert.x-eventloop-thread-5 | TRACE | RoutingContextImplBase | Calling the  handler
+2020-04-29 20:03:29.222+00:00 | vert.x-worker-thread-1 | DEBUG | JsonRpcHttpService | JSON-RPC request -> admin_nodeInfo
+2020-04-29 20:03:29.223+00:00 | vert.x-worker-thread-1 | DEBUG | NatService | Waiting for up to 60 seconds to detect external IP address...
+2020-04-29 20:03:29.348+00:00 | vert.x-eventloop-thread-1 | TRACE | DiscoveryProtocolLogger | >>> Received PING  packet from peer 0xe2ae10dfefe0292b8d604ef7ee7aca40 (enode://e2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f@172.17.0.3:30303): Packet{type=PING, data=PingPacketData{from=Endpoint{host='0:0:0:0:0:0:0:0', udpPort=30303, getTcpPort=30303}, to=Endpoint{host='172.17.0.4', udpPort=30303}, expiration=1588190629}, hash=0x2d1f4eb81d39a4c2f4b829c0a48db44fbad98c4731137af76cba79b481a9d62f, signature=SECP256K1.Signature{r=5777567879459165740744699532257677463584237388906724850444556250055587228694, s=8778409935323612275148446763508607939524007229746804820691640885502885445282, recId=0}, publicKey=0xe2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f}
+2020-04-29 20:03:29.351+00:00 | vert.x-eventloop-thread-1 | TRACE | RlpxAgent | Initiating connection to peer: enode://e2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f@172.17.0.3:30303
+2020-04-29 20:03:29.366+00:00 | nioEventLoopGroup-3-1 | TRACE | ECIESHandshaker | Prepared ECIES handshake with node 0xe2ae10dfefe0292b8d604ef7ee7aca40... under INITIATOR role
+2020-04-29 20:03:29.368+00:00 | vert.x-eventloop-thread-1 | TRACE | DiscoveryProtocolLogger | <<< Sending  PONG  packet to peer 0xe2ae10dfefe0292b8d604ef7ee7aca40 (enode://e2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f@172.17.0.3:30303): Packet{type=PONG, data=PongPacketData{to=Endpoint{host='0:0:0:0:0:0:0:0', udpPort=30303, getTcpPort=30303}, pingHash=0x2d1f4eb81d39a4c2f4b829c0a48db44fbad98c4731137af76cba79b481a9d62f, expiration=1588190669354}, hash=0x62864e6bac40490386ee21b806eca3ebd7260ade3cc339e6196e47e907b7350d, signature=SECP256K1.Signature{r=57251131490561430013610515613510930646243267546131685035387769538059997136991, s=48242986298534800812639434796030386855408390957304129309507818426531845406238, recId=0}, publicKey=0x607c6c65d7f7046aeb3d9db359eecbd78c6d9502d097e85cfe43a7ea25fbb27b448fff5fb5a4e6df38e18a1cb798195c2a54b67840bf69366050724585159f17}
+2020-04-29 20:03:29.393+00:00 | nioEventLoopGroup-3-1 | TRACE | ECIESHandshaker | First ECIES handshake message under INITIATOR role: org.hyperledger.besu.ethereum.p2p.rlpx.handshake.ecies.InitiatorHandshakeMessageV4@330025df
+2020-04-29 20:03:29.398+00:00 | nioEventLoopGroup-3-1 | DEBUG | RlpxAgent | Failed to connect to peer 0xe2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /172.17.0.3:30303
+2020-04-29 20:03:29.676+00:00 | vert.x-eventloop-thread-1 | TRACE | DiscoveryProtocolLogger | >>> Received PONG  packet from peer 0xe2ae10dfefe0292b8d604ef7ee7aca40 (enode://e2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f@172.17.0.3:30303): Packet{type=PONG, data=PongPacketData{to=Endpoint{host='172.17.0.4', udpPort=30303}, pingHash=0x0000000000000000000000000000000000000000000000000000000000000000, expiration=1588190629}, hash=0x149d474ebf35b29a8b68315068465ea491af53110eb2477ff091372e262fb89c, signature=SECP256K1.Signature{r=60115065806349619258294011779503433732755275384927566759411475211791148257002, s=37988527628665724872522541103027430101003122932449186263598125474889337829662, recId=1}, publicKey=0xe2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f}
+2020-04-29 20:03:29.797+00:00 | vert.x-eventloop-thread-1 | TRACE | DiscoveryProtocolLogger | >>> Received FINDN packet from peer 0xe2ae10dfefe0292b8d604ef7ee7aca40 (enode://e2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f@172.17.0.3:30303): Packet{type=FIND_NEIGHBORS, data=FindNeighborsPacketData{expiration=1588190629, target=0x4115ef5f6a477c978a966319c667952d986ef5281997741d3b1a4c7f2113706597ace7d8be474cb7aa02f2f507d687b13ce2c3ea8bec3e061264fcd97c382671}, hash=0xaa46d79b0a09b49a8c9792741ef76e2b2ae4eaff089fbf8ce2f3be864986bc12, signature=SECP256K1.Signature{r=108170356176483174104259989649533357205053516730540325285499381204461771678473, s=43728694441748759901260810288037478559867844300211525672625378261681903648724, recId=1}, publicKey=0xe2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f}
+2020-04-29 20:03:29.809+00:00 | vert.x-eventloop-thread-1 | TRACE | DiscoveryProtocolLogger | <<< Sending  NEIGH packet to peer 0xe2ae10dfefe0292b8d604ef7ee7aca40 (enode://e2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f@172.17.0.3:30303): Packet{type=NEIGHBORS, data=NeighborsPacketData{peers=[DiscoveryPeer{status=bonded, enode=enode://e2ae10dfefe0292b8d604ef7ee7aca4088f5cbeaa0e56d03a7e18c3a0fa48e49cc91776b9be6cbba6372582469c0272ce0b914c00829b6a2742a2d99cc7d920f@172.17.0.3:30303, firstDiscovered=1588190609349, lastContacted=1588190609369, lastSeen=1588190609349}], expiration=1588190669800}, hash=0xce49a36f49f28f08c0971ba164f0388020f1815fc3cb71c33d31e7a22ee32ca8, signature=SECP256K1.Signature{r=6208362316684293688115083473480464081112701309792112459466487274073064391239, s=20111150528864707200445628276008286654511913485790322432281877614361947725, recId=0}, publicKey=0x607c6c65d7f7046aeb3d9db359eecbd78c6d9502d097e85cfe43a7ea25fbb27b448fff5fb5a4e6df38e18a1cb798195c2a54b67840bf69366050724585159f17}
